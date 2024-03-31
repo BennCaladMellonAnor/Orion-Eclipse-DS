@@ -1,0 +1,57 @@
+Objetivo do Jogo *USAR CALCULOS E UNIDADES DE MEDIDAS REAIS PARA INTERAGIR COM AS COISAS*
+
+
+Coletar Recursos
+
+construir uma vila
+
+o boneco principal é um "deus vivo"
+
+coleta os recursos necessários para criar tudo
+
+Crie os primeiro seres vivos
+
+Os seres vivos ser criado a partir de arvores, existirão duas, olmo e freixo
+
+Se criar seres a partir da mesma arvore, nascerá do mesmo sexo
+
+Os seres irão se reproduzir se forem de sexo diferentes
+	Se for do mesmo sexo, não!
+	E criar seres deve demandar muito trabalho do jogador a ponto dele só conseguir fazer 2.
+
+Serão necessários recursos para o jogador criar os seres, e esses devem ser obtidos destruindo mob's
+
+Os recursos liberados pelos mob's devem ser usados para criar vida, mas não os seres
+	Uma das formas de vida são arvores
+	E das arvores os seres
+	
+A ideia é construir um vila, um sistema economico, politica, comércio, Guerras
+Nações, Evolução dos bonecos
+Sendo o player essencias para gerir isso, proporcionando através da fé
+
+Quero introduzir agentes químicos, fisico e outros estudos no jogo
+
+Ordem
+
+1. Destrua seres que vêm do vazio, do nada
+	1.1 - Eles dropam Itens e uma delas é magia
+	1.2 - Os itens são coletáveis como
+		1.2.1 - Sangue (usado para fazer algumas formas de vida)
+			1.2.1.1 - Arvores
+	
+Items
+
+1. Matéria
+
+
+Recursos
+
+1. Magia
+
+
+
+PRECISO CRIAR UMA METODO PARA QUEBRAR OBJETOS, ONDE É PASSADO COMO PARAMETROS
+A FACILIDADE DO OBJETO EM QUEBRAR
+E A FACILIDADE DO OBJETO EM SER QUEBRADO
+METODO (OBJ QUE CAUSA O DANO, OBJ QUE RECEBE O DANO)
+
