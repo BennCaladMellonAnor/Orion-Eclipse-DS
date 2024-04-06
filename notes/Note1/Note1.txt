@@ -24,6 +24,8 @@ Serão necessários recursos para o jogador criar os seres, e esses devem ser ob
 Os recursos liberados pelos mob's devem ser usados para criar vida, mas não os seres
 	Uma das formas de vida são arvores
 	E das arvores os seres
+	Os mob's derrotados liberam essencia I
+	e com essas essencias é possivel criar arvores
 	
 A ideia é construir um vila, um sistema economico, politica, comércio, Guerras
 Nações, Evolução dos bonecos

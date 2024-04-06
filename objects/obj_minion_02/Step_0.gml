@@ -90,6 +90,76 @@ switch (state) {
         }
 		
 		break;
+	case "ATTACK_MOBS":
+		// Lógica para atacar mobs
+	    var _enemy_list = ds_list_create();
+	    with (obj_enemy_03) {
+	        ds_list_add(_enemy_list, id);
+	    }
+    
+	    // Encontra o inimigo mais próximo
+	    var _nearest_enemy = noone;
+	    var _nearest_distance = -1;
+    
+	    for (var _i = 0; _i < ds_list_size(_enemy_list); _i++) {
+	        var _enemy_id = ds_list_find_value(_enemy_list, _i);
+	        var _distance = distance_to_object(_enemy_id);
+        
+	        if (_nearest_distance == -1 || _distance < _nearest_distance) {
+	            _nearest_enemy = _enemy_id;
+	            _nearest_distance = _distance;
+	        }
+	    }
+    
+	    // Libera a lista de inimigos
+	    ds_list_destroy(_enemy_list);
+    
+	    // Define o inimigo mais próximo como alvo
+	    if (_nearest_enemy != noone) {
+	        follow_obj = _nearest_enemy;
+	        state = "DASH_TO_ENEMY";
+	    } else {
+	        state = "FIND_RESOURCES"; // Volta a procurar recursos se não houver inimigos
+	    }
+	    break;
+
+	case "DASH_TO_ENEMY":
+		
+		if(!instance_exists(follow_obj)){
+			state = "ATTACK_MOBS";
+			break;
+		}
+		
+		image_blend = c_red;
+		
+	    // Lógica para se mover rapidamente em direção ao inimigo
+	    var _direction = point_direction(x, y, follow_obj.x, follow_obj.y);
+	    var _hspd = lengthdir_x(12, _direction); // Velocidade aumentada para simular um dash
+	    var _vspd = lengthdir_y(12, _direction);
+		
+		// Criação do rastro
+		if (random(1) < 0.5) { // Ajuste a frequência de criação do rastro conforme desejado
+			var _trail = instance_create_layer(x, y, "Instances", obj_trail);
+			_trail.image_blend = make_color_hsv(0, 1, 0.5); // Define a cor inicial do rastro
+
+		}
+
+    
+	    x += _hspd;
+	    y += _vspd;
+    
+	    // Verifica se atingiu o inimigo
+	    if (distance_to_object(follow_obj) <= 10) {
+	        // Realiza o ataque
+	        apply_damage(id, follow_obj.id);
+	        //state = "FIND_RESOURCES"; // Volta a procurar recursos após o ataque
+			// Criação do rastro
+				repeat(irandom_range(10, 50)){
+					var _particles = instance_create_layer(x, y, "Instances", obj_explosion_particles);
+				}
+			instance_destroy();
+	    }
+	    break;
 	default:
 		break;
 }

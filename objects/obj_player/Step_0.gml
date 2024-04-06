@@ -33,5 +33,9 @@ if(_jump){
 	fire();
 }
 
+if(keyboard_check_pressed(ord("Q"))){
+	attack();
+}
+
 image_angle = direction;
 

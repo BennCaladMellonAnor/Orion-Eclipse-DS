@@ -36,4 +36,6 @@ _change_y = 300;
 
 randomize();
 
+resistance = 1000 //Newton's
+wear = 0 //Desgaste
 

@@ -77,14 +77,20 @@ switch(ai_state){
 		break;
 }
 
+if(wear > resistance){
+	instance_destroy();
+}
+
 //Debug
 info_array = [
 	["ID", string(id) + " | Enemy"],
 	["State", ai_state],
     ["Distance", distance],
     ["Range", config[0]],
-	["CX", _change_x],
-	["CY", _change_y]
+	//["CX", _change_x],
+	//["CY", _change_y]
+	["Resistance: ", resistance],
+	["WEAR: ", wear],
 	
 ];
 

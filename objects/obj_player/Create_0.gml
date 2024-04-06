@@ -6,6 +6,8 @@ movespeed = 4;
 kill_probability = 45;
 death_probability = 70;
 
+dark_soul = 0;
+
 //instance_create_layer(x, y, "Instances", obj_arrow);
 
 function fire(){
@@ -16,6 +18,10 @@ function fire(){
 	//_obj.direction = direction;
 	//_obj.kill_probability = kill_probability;
 	var _obj = instance_create_layer(x, y, "Instances", obj_minion_02);
+}
+function attack(){
+	var _obj = instance_create_layer(x, y, "Instances", obj_minion_02);
+	_obj.state = "ATTACK_MOBS";
 }
 
 if(!instance_exists(obj_mouse)){

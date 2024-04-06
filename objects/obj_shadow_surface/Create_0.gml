@@ -6,6 +6,6 @@ height = room_height;
 
 surf = surface_create(width, height);
 
-
+show = true;
 
 
