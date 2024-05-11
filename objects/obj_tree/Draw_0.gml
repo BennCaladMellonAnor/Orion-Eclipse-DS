@@ -1,15 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-
-
-
-
-
-
-// Inherit the parent event
-event_inherited();
-
 //Variables
 
 // Define a posição inicial para o texto ao lado direito da sprite
@@ -33,3 +24,18 @@ for (var _i = 0; _i < array_length(info_array); _i++) {
     draw_text(_x, _y + (_i == 0 ? 0 : _i * _line_height), _key + ": " + _value);
 }
 
+//Desenha um circulo da area
+
+if(distance_to_object(obj_player) < range_area){
+	draw_set_color(c_red);
+	draw_set_alpha(0.2);
+	draw_circle(x, y, range_area, false);
+	draw_set_color(-1);
+	draw_set_alpha(1);
+}else{
+	draw_set_color(c_red);
+	draw_circle(x, y, range_area, true);
+	draw_set_color(-1);
+}
+
+draw_self();

@@ -1,5 +1,31 @@
 Objetivo do Jogo *USAR CALCULOS E UNIDADES DE MEDIDAS REAIS PARA INTERAGIR COM AS COISAS*
 
+*Lista de coisas para fazer*
+
+1. Obj Player
+	1. Usar variaveis globais
+
+2. Obj Minion
+
+3. Obj Enemy
+
+4. Controller
+	4.1 - Criar area de spawn dos mob's enemy
+
+5. Obj Tree
+
+6. Seres
+
+7. Cenário
+
+8. Info na tela
+	8.1 - Barra de essencia negra
+	8.2 - Barra de essencia pura
+	8.3 - Barra de existencia
+
+9. Obj_human
+	9.1 - Só pode ser criado numa arvore e com essencia pura
+	
 
 Coletar Recursos
 
@@ -31,7 +57,7 @@ A ideia é construir um vila, um sistema economico, politica, comércio, Guerras
 Nações, Evolução dos bonecos
 Sendo o player essencias para gerir isso, proporcionando através da fé
 
-Quero introduzir agentes químicos, fisico e outros estudos no jogo
+Quero introduzir agentes químicos, fisico se outros estudos no jogo
 
 Ordem
 

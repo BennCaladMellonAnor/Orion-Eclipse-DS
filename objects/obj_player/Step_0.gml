@@ -37,5 +37,12 @@ if(keyboard_check_pressed(ord("Q"))){
 	attack();
 }
 
+if(keyboard_check(vk_control) && keyboard_check_released(ord("Q"))){
+	var _obj = instance_nearest(x, y, obj_tree);
+	if(_obj){
+		_obj.born();
+	}
+}
+
 image_angle = direction;
 

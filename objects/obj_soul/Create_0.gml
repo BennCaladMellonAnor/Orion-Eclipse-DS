@@ -3,6 +3,10 @@
 
 
 state = "DASH_TO_PLAYER";
-
+soul_type = 0;
+/**
+	0 = Dark Soul
+	1 = Pure Soul
+*/
 
 

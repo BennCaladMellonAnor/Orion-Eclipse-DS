@@ -34,11 +34,14 @@ switch (state) {
 		
 		
 		//Define o recurso de destino como o objeto de recursos mais proximo
+			//Se o Obj do recurso existe!
 		if(_nearest_resource != noone){
 			follow_obj = _nearest_resource;
-			state = "GO_TO_RESOURCE";
-			
+			state = "GO_TO_RESOURCE";	
+		}else{ //Se o objeto do recurso não existe
+			state = "DASH_TO_PLAYER";
 		}
+			
 		
 		break;
     case "GO_TO_RESOURCE":
@@ -75,7 +78,7 @@ switch (state) {
         // Lógica para coletar recursos
         // ...
 		if(!instance_exists(follow_obj)){
-			state = "FIND_RESOURCES";//Se o recurso não existir mais procura outro....
+			state = "DASH_TO_PLAYER";//Se o recurso não existir mais procura outro....
 			break;
 		}
 		
@@ -160,6 +163,26 @@ switch (state) {
 			instance_destroy();
 	    }
 	    break;
+	case "DASH_TO_PLAYER":
+		if (instance_exists(obj_player)) {
+	        var _direction = point_direction(x, y, obj_player.x, obj_player.y);
+	        var _hspd = lengthdir_x(20, _direction); // Velocidade aumentada para simular um dash
+	        var _vspd = lengthdir_y(20, _direction);
+			
+			image_blend = c_navy;
+
+	        x += _hspd;
+	        y += _vspd;
+
+	        // Verifica se colidiu com o jogador
+	        if (place_meeting(x, y, obj_player)) {
+	            instance_destroy(); // Destrua o objeto
+	        }
+	    } else {
+	        state = ""; // Se o jogador não existe, pare de se mover
+			instance_destroy();
+	    }
+		break;
 	default:
 		break;
 }

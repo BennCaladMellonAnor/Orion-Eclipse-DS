@@ -23,6 +23,21 @@ if(_current_item_index > array_length(item) - 1){
 	_current_item_index = 0;
 }
 
+//Items
+item = [
+	[spr_tree, obj_tree, obj_player.dark_soul],		
+];
 
+enemys_count = instance_number(obj_enemy_03)
+
+//Player Info
+
+info_array = [
+	["Existence", instance_exists(obj_player) ? string(obj_player.existence) : ""],
+	["Dark Soul", instance_exists(obj_player) ? string(obj_player.dark_soul) : ""],
+	["Pure Soul", instance_exists(obj_player) ? string(obj_player.pure_soul) : ""],
+	["Minions: ", string(instance_number(obj_minion_02)) + "/" +string(obj_player.minion_limit)],
+	["Enemys Count: ", string(enemys_count)],
+];
 
 

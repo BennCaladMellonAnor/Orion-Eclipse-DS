@@ -15,13 +15,27 @@ if (state == "DASH_TO_PLAYER") {
 
         // Verifica se colidiu com o jogador
         if (place_meeting(x, y, obj_player)) {
-            obj_player.dark_soul += 1; // Incrementa a energia do jogador
+            switch(soul_type){
+				case 1:
+					obj_player.pure_soul += 1; // Incrementa a energia do jogador
+					break;
+				default:
+					obj_player.dark_soul += 1; // Incrementa a energia do jogador
+			}
             instance_destroy(); // Destrua o objeto
         }
     } else {
         state = ""; // Se o jogador não existe, pare de se mover
 		instance_destroy();
     }
+}
+
+ switch(soul_type){
+	case 1:
+		image_blend = c_aqua;
+		break;
+	default:
+		image_blend = c_black;
 }
 
 

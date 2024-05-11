@@ -10,6 +10,8 @@
 // Inherit the parent event
 event_inherited();
 
+
+
 if(wear > resistance){instance_destroy()}
 
 info_array = [

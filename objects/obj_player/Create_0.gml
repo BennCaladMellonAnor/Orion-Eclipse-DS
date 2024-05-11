@@ -6,7 +6,10 @@ movespeed = 4;
 kill_probability = 45;
 death_probability = 70;
 
-dark_soul = 0;
+dark_soul = 1;
+pure_soul = 1;
+existence = 10;
+minion_limit = 2;
 
 //instance_create_layer(x, y, "Instances", obj_arrow);
 
@@ -17,11 +20,27 @@ function fire(){
 	//_obj.image_angle = image_angle
 	//_obj.direction = direction;
 	//_obj.kill_probability = kill_probability;
-	var _obj = instance_create_layer(x, y, "Instances", obj_minion_02);
+	if(instance_number(obj_minion_02) < minion_limit){
+		var _obj = instance_create_layer(x, y, "Instances", obj_minion_02);
+	}
 }
 function attack(){
-	var _obj = instance_create_layer(x, y, "Instances", obj_minion_02);
-	_obj.state = "ATTACK_MOBS";
+	if(instance_number(obj_minion_02) < minion_limit){
+		var _obj = instance_create_layer(x, y, "Instances", obj_minion_02);
+		_obj.state = "ATTACK_MOBS";
+	}
+	
+}
+
+function spawn_minion(_state){
+	switch(_state){
+		case 1:
+			break;
+		case 2:
+			break;
+		default:
+			break;
+	}
 }
 
 if(!instance_exists(obj_mouse)){

@@ -24,6 +24,11 @@ if (!_mouse_inside_x || !_mouse_inside_y) {
         y += sign(_dy) * _grid_size;
     }
 }
+
+if(mouse_check_button_pressed(mb_left)){
+	put();
+}
+
 show_debug_message("Mouse:");
 show_debug_message("x: " + string(mouse_x) + ", y: " + string(mouse_y));
 show_debug_message("Obj grid do mouse:");

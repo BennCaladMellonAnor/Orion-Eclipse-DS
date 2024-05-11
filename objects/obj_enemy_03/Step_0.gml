@@ -31,8 +31,8 @@ switch(ai_state){
 		
 		
 		if(distance_to_point(_change_x, _change_y) <= 0){
-			_change_x = irandom_range(100, 1200);
-			_change_y = irandom_range(100, 700);
+			_change_x = irandom_range(100, (room_width-100));
+			_change_y = irandom_range(100, (room_height-100));
 			ai_state = "IDLE";
 		}
 		
